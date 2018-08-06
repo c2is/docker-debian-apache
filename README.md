@@ -12,7 +12,7 @@ Warning for macosx and windows users : ip value should be changed according your
 ##### With docker-compose (use image already built from docker's hub)
 ```
 # In your docker-compose.yml file
-c2isapachephp:
+apache:
     image: c2is/debian-apache
     ports:
         - 80:80
