@@ -32,4 +32,4 @@ docker build -t . c2isDebAp
 docker run -d -e WEBSITE_HOST=projectname.dev.acti -e SYMFONY_VHOST_COMPLIANT=yes c2isDebAp
 ```
 
-##### Then crawl you application : http://website.docker/
+##### Then crawl you application : http://projectname.dev.acti/
