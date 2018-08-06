@@ -1,4 +1,4 @@
-# C2is container for Debian stretch Apache 2.4
+# Acti container for Debian stretch Apache 2.4
 
 ### Usage 
 
