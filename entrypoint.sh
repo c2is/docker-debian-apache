@@ -10,6 +10,9 @@ fi
 if [ "$SYMFONY_VHOST_COMPLIANT" == "yes" ]; then
 	SUFFIX="/web"
 fi
+if [ "$VHOST_SUFFIX" != "" ]; then
+  SUFFIX="/$VHOST_SUFFIX"
+fi
 
 cat <<EOF >> /etc/apache2/sites-available/vhost-website.conf
 <VirtualHost *:80>
