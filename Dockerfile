@@ -21,6 +21,11 @@ RUN chmod 777 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 RUN ln -s /etc/apache2/sites-available/vhost-website.conf /etc/apache2/sites-enabled/vhost-website.conf
+
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/apache2/access.log \
+&& ln -sf /dev/stderr /var/log/apache2/error.log
+
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 80
 EXPOSE 443
