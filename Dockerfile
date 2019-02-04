@@ -23,7 +23,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 RUN ln -s /etc/apache2/sites-available/vhost-website.conf /etc/apache2/sites-enabled/vhost-website.conf
 
 # disable default vhost
-RUN > /etc/apache2/sites-available/000-default.conf
+RUN a2dissite 000-default
 
 # forward error logs to docker log collector
 RUN ln -sf /dev/stderr /var/log/apache2/error.log
