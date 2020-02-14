@@ -14,7 +14,9 @@ RUN apt-get update && \
     a2enmod rewrite ssl headers proxy proxy_fcgi && \
     chmod 777 /entrypoint.sh  && \
     a2dissite 000-default && \
-    ln -s /etc/apache2/sites-available/vhost-website.conf /etc/apache2/sites-enabled/vhost-website.conf
+    ln -s /etc/apache2/sites-available/vhost-website.conf /etc/apache2/sites-enabled/vhost-website.conf && \
+    ln -sf /dev/stdout /var/log/apache2/access.log && \
+    ln -sf /dev/stderr /var/log/apache2/error.log
 
 ADD ports.conf /etc/apache2/ports.conf
 ADD ssl.key /etc/apache2/ssl/ssl.key
