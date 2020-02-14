@@ -21,8 +21,8 @@ cat <<EOF >> /etc/apache2/sites-available/vhost-website.conf
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/website$SUFFIX
 
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        ErrorLog /proc/self/fd/2
+        CustomLog /proc/self/fd/1 combined
 
         <Directory /var/www/website$SUFFIX>
           Require all granted	
@@ -43,8 +43,8 @@ cat <<EOF >> /etc/apache2/sites-available/vhost-website.conf
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/website$SUFFIX
 
-        ErrorLog ${APACHE_LOG_DIR}/error-ssl.log
-        CustomLog ${APACHE_LOG_DIR}/access-ssl.log combined
+        ErrorLog /proc/self/fd/2
+        CustomLog /proc/self/fd/1 combined
 
         <Directory /var/www/website$SUFFIX>
           Require all granted

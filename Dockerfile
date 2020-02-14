@@ -16,7 +16,7 @@ RUN apt-get update && \
     a2dissite 000-default && \
     ln -s /etc/apache2/sites-available/vhost-website.conf /etc/apache2/sites-enabled/vhost-website.conf && \
     ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
-    ln -sf proc/self/fd/2 /var/log/apache2/error.log
+    ln -sf /proc/self/fd/2 /var/log/apache2/error.log
 
 ADD ports.conf /etc/apache2/ports.conf
 ADD ssl.key /etc/apache2/ssl/ssl.key
